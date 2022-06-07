@@ -35,7 +35,7 @@ function App() {
       },
       title: {
         display: true,
-        text: 'Elon Musk Tweets',
+        text: 'Elon Musk Tweets: length v. likes',
       },
     },
   };
@@ -46,7 +46,7 @@ function App() {
     labels,
     datasets: [
       {
-        label: 'Tweet Length',
+        label: 'Likes',
         data: likes,
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
