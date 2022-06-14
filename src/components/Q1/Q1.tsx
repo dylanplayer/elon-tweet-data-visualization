@@ -1,5 +1,3 @@
-import React from 'react';
-import './App.css';
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -11,6 +9,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Chart } from 'react-chartjs-2';
 
 import likes from './likes.json';
@@ -26,7 +25,7 @@ ChartJS.register(
   Legend
 )
 
-function App() {
+const Q1 = () => {
   const options = {
     responsive: true,
     plugins: {
@@ -61,4 +60,4 @@ function App() {
   );
 }
 
-export default App;
+export default Q1;
