@@ -28,15 +28,6 @@ ChartJS.register(
 const Q1 = () => {
   const options = {
     responsive: true,
-    plugins: {
-      legend: {
-        position: 'top' as const,
-      },
-      title: {
-        display: true,
-        text: 'Elon Musk Tweets: length v. likes',
-      },
-    },
   };
   
   const labels = lengths;
@@ -54,9 +45,10 @@ const Q1 = () => {
   };
 
   return (
-    <div className="App">
+    <>
+      <h1>Do tweets with certain lengths get more likes than others?</h1>
       <Line data={data} options={options} />
-    </div>
+    </>
   );
 }
 

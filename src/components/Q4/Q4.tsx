@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
-import data from './wordLikes.json';
+import data from './wordCounts.json';
 
 const Q2 = () => {
   const svg = useRef(null);
@@ -19,8 +19,8 @@ const Q2 = () => {
     const yscale = d3
       .scaleLinear()
       .domain([
-        d3.min(data, ({ avgLikes }) => (avgLikes ? avgLikes - 50000 : 0)) as number,
-        d3.max(data, ({ avgLikes }) => (avgLikes ? avgLikes + 50000 : 0)) as number
+        d3.min(data, ({ count }) => (count ? count - 1 : 0)) as number,
+        d3.max(data, ({ count }) => (count ? count + 1 : 0)) as number
       ])
       .range([height - margin.bottom, margin.top])
 
@@ -46,8 +46,8 @@ const Q2 = () => {
       .attr('class', 'bar')
       .attr('x', (d:any) => xscale(d.word))
       .attr('width', xscale.bandwidth())
-      .attr('y', (d:any) => yscale(d.avgLikes))
-      .attr('height', (d:any) => height - yscale(d.avgLikes) - margin.bottom)
+      .attr('y', (d:any) => yscale(d.count))
+      .attr('height', (d:any) => height - yscale(d.count) - margin.bottom)
       .attr('fill', '#69b3a2')
   }
 
@@ -57,7 +57,7 @@ const Q2 = () => {
 
   return (
     <>
-      <h1>Which words get the most likes?</h1>
+      <h1>What are the most common words in tweets with the word "tesla"?</h1>
       <svg
         ref={svg}
         style={{
